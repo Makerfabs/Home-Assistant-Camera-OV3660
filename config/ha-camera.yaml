@@ -7,7 +7,7 @@ esphome:
       then:
         - if:
             condition:
-              lambda: return id(camera_1).is_failed();
+              lambda: return !id(camera_1).is_failed();
             then:
               - rtttl.play: 'Beep:d=8,o=5,b=600:c'
 
@@ -94,6 +94,7 @@ light:
 
 # for ha cameara
 esp32_camera:
+  name: Frame
   id: camera_1
   external_clock:
     pin: GPIO12
