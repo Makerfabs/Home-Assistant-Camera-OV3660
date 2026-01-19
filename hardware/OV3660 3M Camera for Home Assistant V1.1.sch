@@ -4504,6 +4504,11 @@ Small surface-mount magnetic buzzer</description>
 <text x="0.635" y="-2.54" size="1.27" layer="25">&gt;name</text>
 <text x="0.635" y="-3.81" size="1.27" layer="27">&gt;value</text>
 </package>
+<package name="THD1-M1.2">
+<pad name="1" x="0" y="0" drill="2.05" diameter="2.5"/>
+<text x="1.27" y="-2.54" size="1.27" layer="25">&gt;name</text>
+<text x="1.27" y="-3.81" size="1.27" layer="27">&gt;value</text>
+</package>
 </packages>
 <symbols>
 <symbol name="WS2812B-2020">
@@ -4517,6 +4522,12 @@ Small surface-mount magnetic buzzer</description>
 <wire x1="7.62" y1="5.08" x2="-5.08" y2="5.08" width="0.254" layer="94"/>
 <text x="7.62" y="-7.62" size="1.27" layer="95">&gt;name</text>
 <text x="7.62" y="-9.144" size="1.27" layer="96">&gt;value</text>
+</symbol>
+<symbol name="SCREW01_M1.2">
+<pin name="1" x="-7.62" y="0" length="middle"/>
+<circle x="0" y="0" radius="2.54" width="0.254" layer="94"/>
+<text x="0" y="-5.08" size="1.27" layer="95">&gt;name</text>
+<text x="0" y="-6.604" size="1.27" layer="96">&gt;value</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -4538,6 +4549,21 @@ Small surface-mount magnetic buzzer</description>
 </device>
 </devices>
 </deviceset>
+<deviceset name="SCREW01-M1.2">
+<gates>
+<gate name="G$1" symbol="SCREW01_M1.2" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="THD1-M1.2">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 </libraries>
@@ -4546,8 +4572,7 @@ Small surface-mount magnetic buzzer</description>
 <variantdefs>
 </variantdefs>
 <classes>
-<class number="0" name="default" width="0.2032" drill="0.3048">
-<clearance class="0" value="0.1524"/>
+<class number="0" name="default" width="0" drill="0.3048">
 </class>
 <class number="2" name="gnd" width="0.3048" drill="0.5588">
 <clearance class="2" value="0.254"/>
@@ -4628,7 +4653,6 @@ Small surface-mount magnetic buzzer</description>
 <part name="C4" library="A9G" deviceset="DISCRETE_C*" device="-0402" value="0.1uF"/>
 <part name="C6" library="A9G" deviceset="DISCRETE_C*" device="-0402" value="10uF"/>
 <part name="C2" library="A9G" deviceset="DISCRETE_C*" device="-0402" value="0.1uF"/>
-<part name="C5" library="A9G" deviceset="DISCRETE_C*" device="-0402" value="10uF"/>
 <part name="C7" library="A9G" deviceset="DISCRETE_C*" device="-0402" value="10uF"/>
 <part name="C9" library="A9G" deviceset="DISCRETE_C*" device="-0402" value="0.1uF"/>
 <part name="R1" library="A9G" deviceset="DISCRETE_R*" device="-0402" value="10K"/>
@@ -4650,6 +4674,14 @@ Small surface-mount magnetic buzzer</description>
 <part name="R13" library="A9G" deviceset="DISCRETE_R*" device="-0402" value="1K"/>
 <part name="R14" library="A9G" deviceset="DISCRETE_R*" device="-0402" value="5.1K"/>
 <part name="R15" library="A9G" deviceset="DISCRETE_R*" device="-0402" value="5.1K"/>
+<part name="M1" library="user" deviceset="SCREW01-M1.2" device=""/>
+<part name="M2" library="user" deviceset="SCREW01-M1.2" device=""/>
+<part name="M3" library="user" deviceset="SCREW01-M1.2" device=""/>
+<part name="M4" library="user" deviceset="SCREW01-M1.2" device=""/>
+<part name="GND4" library="supply1" deviceset="GND" device=""/>
+<part name="GND7" library="supply1" deviceset="GND" device=""/>
+<part name="GND8" library="supply1" deviceset="GND" device=""/>
+<part name="GND9" library="supply1" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -4856,10 +4888,6 @@ Small surface-mount magnetic buzzer</description>
 <attribute name="NAME" x="348.996" y="82.55" size="1.27" layer="95" rot="R180"/>
 <attribute name="VALUE" x="348.742" y="78.74" size="1.27" layer="96" rot="R180"/>
 </instance>
-<instance part="C5" gate="C" x="340.36" y="81.28" smashed="yes" rot="R90">
-<attribute name="NAME" x="337.566" y="83.82" size="1.27" layer="95" rot="R180"/>
-<attribute name="VALUE" x="337.312" y="80.01" size="1.27" layer="96" rot="R180"/>
-</instance>
 <instance part="C7" gate="C" x="339.09" y="53.34" smashed="yes" rot="R90">
 <attribute name="NAME" x="338.836" y="55.626" size="1.27" layer="95" rot="R180"/>
 <attribute name="VALUE" x="338.836" y="52.324" size="1.27" layer="96" rot="R180"/>
@@ -4944,6 +4972,14 @@ Small surface-mount magnetic buzzer</description>
 <attribute name="NAME" x="43.18" y="155.448" size="1.27" layer="95" ratio="10" rot="R90"/>
 <attribute name="VALUE" x="39.37" y="154.178" size="1.27" layer="96" ratio="10" rot="R90"/>
 </instance>
+<instance part="M1" gate="G$1" x="149.86" y="121.92"/>
+<instance part="M2" gate="G$1" x="167.64" y="121.92"/>
+<instance part="M3" gate="G$1" x="187.96" y="121.92"/>
+<instance part="M4" gate="G$1" x="149.86" y="109.22"/>
+<instance part="GND4" gate="1" x="139.7" y="104.14"/>
+<instance part="GND7" gate="1" x="139.7" y="116.84"/>
+<instance part="GND8" gate="1" x="157.48" y="116.84"/>
+<instance part="GND9" gate="1" x="177.8" y="116.84"/>
 </instances>
 <busses>
 </busses>
@@ -5099,12 +5135,9 @@ Small surface-mount magnetic buzzer</description>
 </segment>
 <segment>
 <pinref part="GND5" gate="1" pin="GND"/>
-<wire x1="340.36" y1="72.39" x2="340.36" y2="77.47" width="0.1524" layer="91"/>
 <wire x1="350.52" y1="76.2" x2="350.52" y2="72.39" width="0.1524" layer="91"/>
 <wire x1="350.52" y1="72.39" x2="340.36" y2="72.39" width="0.1524" layer="91"/>
-<junction x="340.36" y="72.39"/>
 <pinref part="C2" gate="C" pin="1"/>
-<pinref part="C5" gate="C" pin="1"/>
 </segment>
 <segment>
 <pinref part="GND6" gate="1" pin="GND"/>
@@ -5147,6 +5180,30 @@ Small surface-mount magnetic buzzer</description>
 <wire x1="190.5" y1="74.93" x2="193.04" y2="74.93" width="0.1524" layer="91"/>
 <pinref part="GND1" gate="1" pin="GND"/>
 <wire x1="193.04" y1="74.93" x2="193.04" y2="72.39" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="GND4" gate="1" pin="GND"/>
+<wire x1="139.7" y1="106.68" x2="139.7" y2="109.22" width="0.1524" layer="91"/>
+<pinref part="M4" gate="G$1" pin="1"/>
+<wire x1="139.7" y1="109.22" x2="142.24" y2="109.22" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="GND7" gate="1" pin="GND"/>
+<wire x1="139.7" y1="119.38" x2="139.7" y2="121.92" width="0.1524" layer="91"/>
+<pinref part="M1" gate="G$1" pin="1"/>
+<wire x1="139.7" y1="121.92" x2="142.24" y2="121.92" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="GND8" gate="1" pin="GND"/>
+<wire x1="157.48" y1="119.38" x2="157.48" y2="121.92" width="0.1524" layer="91"/>
+<pinref part="M2" gate="G$1" pin="1"/>
+<wire x1="157.48" y1="121.92" x2="160.02" y2="121.92" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="GND9" gate="1" pin="GND"/>
+<wire x1="177.8" y1="119.38" x2="177.8" y2="121.92" width="0.1524" layer="91"/>
+<pinref part="M3" gate="G$1" pin="1"/>
+<wire x1="177.8" y1="121.92" x2="180.34" y2="121.92" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="RESET" class="0">
@@ -5727,14 +5784,12 @@ Small surface-mount magnetic buzzer</description>
 <segment>
 <pinref part="U10" gate="G$1" pin="VOUT"/>
 <wire x1="336.55" y1="87.63" x2="340.36" y2="87.63" width="0.1524" layer="91"/>
-<wire x1="340.36" y1="87.63" x2="340.36" y2="85.09" width="0.1524" layer="91"/>
 <wire x1="340.36" y1="87.63" x2="350.52" y2="87.63" width="0.1524" layer="91"/>
 <wire x1="350.52" y1="87.63" x2="350.52" y2="83.82" width="0.1524" layer="91"/>
 <junction x="340.36" y="87.63"/>
 <wire x1="340.36" y1="87.63" x2="340.36" y2="92.71" width="0.1524" layer="91"/>
 <label x="340.106" y="92.456" size="1.778" layer="95"/>
 <pinref part="C2" gate="C" pin="2"/>
-<pinref part="C5" gate="C" pin="2"/>
 </segment>
 </net>
 <net name="CSI_1V2" class="0">
