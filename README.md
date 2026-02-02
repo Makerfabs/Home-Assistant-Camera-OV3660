@@ -4,6 +4,6 @@
 
 
 
-[Product Link]()
+[Product Link](https://www.makerfabs.com/ov3660-3m-camera-for-home-assistant.html)
 
 [Wiki Link]()
