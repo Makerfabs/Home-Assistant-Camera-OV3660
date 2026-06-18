@@ -65,15 +65,15 @@ i2c:
 #                                     sensor                                        #
 ###############################################################################
 
-# aht11
-sensor:
-  - platform: aht10
-    variant: AHT10
-    temperature:
-      name: Temperature
-    humidity:
-      name: Humidity
-    update_interval: 5s
+# aht11 (cometed out since not installed from factory)
+#sensor:
+#  - platform: aht10
+#    variant: AHT10
+#    temperature:
+#      name: Temperature
+#    humidity:
+#      name: Humidity
+#    update_interval: 5s
 
 output:
   - platform: ledc
